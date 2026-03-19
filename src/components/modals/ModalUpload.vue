@@ -309,9 +309,6 @@ onUnmounted(() => document.removeEventListener('click', onClickOutside));
       >
         {{ t('Cancel') }}
       </button>
-      <button v-else type="button" class="vf-btn vf-btn-secondary" @click.prevent="close">
-        {{ t('Close') }}
-      </button>
 
       <!-- Desktop group: far left (row-reverse makes last child appear leftmost) -->
       <div ref="actionsMenuDesktopRef" class="relative mr-auto hidden sm:block">
