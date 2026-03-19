@@ -67,11 +67,19 @@ const handleContextMenu = (event: MouseEvent) => {
     <div class="vuefinder__modal-layout__container">
       <div
         class="vuefinder__modal-layout__wrapper"
+        :class="{ 'vuefinder__modal-layout__wrapper--fullscreen': app.modal.fullScreen }"
         @contextmenu="handleContextMenu"
         @mousedown.self="app.modal.close()"
       >
-        <div ref="modalBody" class="vuefinder__modal-layout__body">
-          <div class="vuefinder__modal-layout__content">
+        <div
+          ref="modalBody"
+          class="vuefinder__modal-layout__body"
+          :class="{ 'vuefinder__modal-layout__body--fullscreen': app.modal.fullScreen }"
+        >
+          <div
+            class="vuefinder__modal-layout__content"
+            :class="{ 'vuefinder__modal-layout__content--fullscreen': app.modal.fullScreen }"
+          >
             <slot />
           </div>
           <div v-if="$slots.buttons" class="vuefinder__modal-layout__footer">

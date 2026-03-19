@@ -14,6 +14,10 @@
   @apply flex min-h-full items-end justify-center px-4 text-center sm:items-center sm:p-0;
 }
 
+.vuefinder__modal-layout__wrapper--fullscreen {
+  @apply items-stretch px-0 sm:p-0;
+}
+
 .vuefinder__modal-layout__body {
   @apply relative w-full transform overflow-hidden rounded-md bg-(--vf-bg-primary) text-left transition-all sm:my-8 sm:max-w-4xl md:max-w-2xl lg:max-w-3xl xl:max-w-3xl;
   box-shadow:
@@ -21,8 +25,16 @@
     0 10px 10px -5px var(--vf-shadow-md);
 }
 
+.vuefinder__modal-layout__body--fullscreen {
+  @apply h-full w-full max-w-none rounded-none sm:my-0;
+}
+
 .vuefinder__modal-layout__content {
   @apply bg-(--vf-bg-primary) px-4 pt-5 pb-4 sm:p-6 sm:pb-4;
+}
+
+.vuefinder__modal-layout__content--fullscreen {
+  @apply h-full;
 }
 
 .vuefinder__modal-layout__footer {
