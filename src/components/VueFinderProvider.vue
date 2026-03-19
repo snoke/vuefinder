@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { provide, onBeforeUnmount, inject, watch, unref } from 'vue';
+import { provide, onBeforeUnmount, inject, watch, unref, useSlots } from 'vue';
 import { registerApp, unregisterApp, ServiceContainerIdKey, useApp } from '../composables/useApp';
 import ServiceContainer from '../ServiceContainer';
 import VueFinderView from './VueFinderView.vue';
 import type { VueFinderProps } from '../types';
 import { menuItems as contextMenuItems } from '../utils/contextmenu';
+import { ModalHeaderActionsSlotKey, ModalHeaderSlotKey } from '../composables/modalSlots';
 
 const props = withDefaults(defineProps<VueFinderProps>(), {
   debug: false,
@@ -61,6 +62,9 @@ watch(
 // Register app and provide id to all child components
 registerApp(appId, app);
 provide(ServiceContainerIdKey, appId);
+const slots = useSlots();
+provide(ModalHeaderSlotKey, slots['modal-header']);
+provide(ModalHeaderActionsSlotKey, slots['modal-header-actions']);
 
 // Cleanup on unmount
 onBeforeUnmount(() => {

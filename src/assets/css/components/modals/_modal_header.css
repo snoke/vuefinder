@@ -1,7 +1,11 @@
 @reference "tailwindcss";
 
 .vuefinder__modal-header {
-  @apply my-1 flex items-center gap-2;
+  @apply my-1 flex items-center justify-between gap-4;
+}
+
+.vuefinder__modal-header__content {
+  @apply flex min-w-0 items-center gap-2;
 }
 
 .vuefinder__modal-header__icon-container {
@@ -14,4 +18,8 @@
 
 .vuefinder__modal-header__title {
   @apply text-lg font-medium text-(--vf-text-primary);
+}
+
+.vuefinder__modal-header__actions {
+  @apply flex items-center gap-2;
 }
